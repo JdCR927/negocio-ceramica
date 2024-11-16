@@ -1,3 +1,7 @@
+# Negocio de cerámicas
+
+## Hecho por Jesús del Castillo 15/11/2024
+
 ``` mermaid 
 
 classDiagram
@@ -38,3 +42,4 @@ Vendedor --> Obra
 Alfarero --> Obra
 
 ```
+> Hecho por Jesús del Castillo
