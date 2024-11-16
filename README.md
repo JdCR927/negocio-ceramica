@@ -6,31 +6,35 @@ class Runnable {
     <<Interface>>
 }
 
-class Alfarero {
-    - Obra
-    + Alfarero(Obra)
+class Galeria {
+  +static int TOTAL_OBRAS
+  +main(String[] args)
+}
+
+class Obra {
+  -static String MSG_VENDER
+  -static int TIEMPO_ESPERA
+  -byte numObras
+  +synchronized exponer(String id)
+  +synchronized vender()
 }
 
 class Vendedor {
-    - TIEMPO_ESPERA $
-    - Obra
-    + Vendedor(Obra)
+  -Obra obra
+  +Vendedor(Obra o)
+  +run()
 }
 
-class Galeria {
-    +static int TOTAL_OBRAS
-    +main(String[] args)
-  }
-
-class Obra {
-    + String MSG_VENDER
-    + exponer(String id) void
-    + vender() void
+class Alfarero {
+  -Obra obra
+  +Alfarero(Obra o)
+  +run()
 }
 
 Runnable <|.. Alfarero
 Runnable <|.. Vendedor
-Alfarero ..> Obra
-Vendedor ..> Obra
+
+Vendedor --> Obra
+Alfarero --> Obra
 
 ```
