@@ -9,13 +9,15 @@ public class Alfarero implements Runnable {
     }
 
     @Override
-    public void run(){
-        try {
-            obra.exponer(Thread.currentThread().getName());
-        } catch (InterruptedException e) {
-            System.out.println(e.getMessage());
-        }
-
+    public void run() {
+        for(int i = 1; i < Galeria.TOTAL_OBRAS; i++) {
+            try {
+                Thread.sleep((long)Math.random()*100);
+                obra.exponer();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        } 
     }
 
 }

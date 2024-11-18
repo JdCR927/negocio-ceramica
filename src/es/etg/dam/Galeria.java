@@ -7,13 +7,12 @@ public class Galeria {
         
         Obra obra = new Obra();
 
-        for (int i = 0; i < TOTAL_OBRAS; i++) {
-            Thread alfarero = new Thread(new Alfarero(obra));
-            alfarero.start();
-        }
-
+        Thread alfarero = new Thread(new Alfarero(obra));
         Thread vendedor = new Thread(new Vendedor(obra));
+
+        alfarero.start();
         vendedor.start();
+
     }
 
 }

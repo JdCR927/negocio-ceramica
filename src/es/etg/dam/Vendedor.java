@@ -10,14 +10,14 @@ public class Vendedor implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
+        for(int i = 1; i < Galeria.TOTAL_OBRAS; i++) {
             try {
+                Thread.sleep((long)Math.random()*100);
                 obra.vender();
             } catch (InterruptedException e) {
-                System.out.println(e.getMessage());
-            }  
-        }
-        
+                e.printStackTrace();
+            }
+        } 
     }
 
 }
