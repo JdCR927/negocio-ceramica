@@ -2,14 +2,14 @@ package es.etg.dam;
 
 public class Obra {
 
-    private static final int TAMANYO_OBRAS = 1;
+    private static final int TAMANYO_EXPO = 1;
 
     private byte numObras = 0;
 
 
     public synchronized void exponer() throws InterruptedException {
 
-        if(numObras >= TAMANYO_OBRAS ) {
+        if(numObras >= TAMANYO_EXPO ) {
             this.wait();
         }
 
